@@ -1,4 +1,12 @@
 ﻿@page "/"
+@rendermode InteractiveServer
+
+<select @onchange="ChangeLayout">
+    <option value="FullWidthLayout">Full Width Layout</option>
+    <option value="LeftSidebarLayout">Left Sidebar Layout</option>
+    <option value="RightSidebarLayout">Right Sidebar Layout</option>
+</select>
+
 <LayoutWrapper LayoutName=@LayoutName>
     <p>This is dynamic layout content</p>
 </LayoutWrapper>
@@ -8,11 +16,13 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Fetch the layout name from the database
-        //For Blog
-       // LayoutName = "LeftSidebarLayout";
-        //For Home Page
+        // Default layout
         LayoutName = "FullWidthLayout";
-       
+    }
+
+    private void ChangeLayout(ChangeEventArgs e)
+    {
+        LayoutName = e.Value.ToString();
     }
 }
+
