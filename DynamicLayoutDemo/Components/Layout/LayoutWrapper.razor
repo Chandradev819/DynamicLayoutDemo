@@ -1,0 +1,20 @@
+﻿@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public string LayoutName { get; set; }
+
+    private Type layoutType;
+
+    protected override void OnParametersSet()
+    {
+        layoutType = LayoutName switch
+        {
+            "FullWidthLayout" => typeof(FullWidthLayout),
+            "LeftSidebarLayout" => typeof(LeftSidebarLayout),
+            "RightSidebarLayout" => typeof(RightSidebarLayout),
+            _ => typeof(FullWidthLayout)
+        };
+        Console.WriteLine(layoutType);
+    }
+}
+
+<DynamicComponent Type="layoutType" Parameters="new Dictionary<string, object> { { nameof(LayoutComponentBase.Body), ChildContent } }" />

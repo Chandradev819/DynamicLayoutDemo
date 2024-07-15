@@ -1,0 +1,18 @@
+﻿@page "/"
+<LayoutWrapper LayoutName=@LayoutName>
+    <p>This is dynamic layout content</p>
+</LayoutWrapper>
+
+@code {
+    public string LayoutName { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Fetch the layout name from the database
+        //For Blog
+       // LayoutName = "LeftSidebarLayout";
+        //For Home Page
+        LayoutName = "FullWidthLayout";
+       
+    }
+}
