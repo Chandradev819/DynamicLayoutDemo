@@ -59,13 +59,13 @@ h1:focus {
     display: flex;
 }
 
-    .left-sidebar .sidebar {
+.left-sidebar .sidebar {
         width: 20%;
         background-color: lightgreen;
         padding: 20px;
     }
 
-    .left-sidebar .content {
+.left-sidebar .content {
         width: 80%;
         background-color: white;
         padding: 20px;
@@ -75,13 +75,13 @@ h1:focus {
     display: flex;
 }
 
-    .right-sidebar .sidebar {
+.right-sidebar .sidebar {
         width: 20%;
         background-color: lightcoral;
         padding: 20px;
     }
 
-    .right-sidebar .content {
+.right-sidebar .content {
         width: 80%;
         background-color: white;
         padding: 20px;
